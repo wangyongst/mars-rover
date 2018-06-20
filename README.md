@@ -1,3 +1,13 @@
+### Tasks
+1. Read this page to understand the problem
+2. Clone this repository
+3. Write your solution
+4. Write Unit Tests (TDD is much better)
+5. Commit frequently
+6. Write Readme to guide other developers to run the program
+7. Send Pull Request
+8. Wait, we will review your solution soon
+
 ### The Problem
 A squad of robotic rovers are to be landed by NASA on a plateau on Mars.
 This plateau, which is curiously rectangular, must be navigated by the rovers
