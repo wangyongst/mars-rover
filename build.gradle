@@ -36,12 +36,13 @@ dependencyManagement {
     }
 }
 
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
-
 [compileJava, compileTestJava, javadoc]*.options*.encoding = "utf-8"
 
 dependencies {
+
+    testCompile("junit:junit")
+
+    compile('org.apache.commons:commons-lang3')
 }
 
 

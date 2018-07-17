@@ -1,9 +1,10 @@
 package com.myweb;
 
 public class Rover {
+    private Area area;
     private int x;
     private int y;
-    private int direct; // 1E 2N 3W 4S
+    private int direct; // 1W 2N 3E 4S
 
     public Rover(int x, int y, int direct) {
         this.x = x;
@@ -11,31 +12,27 @@ public class Rover {
         this.direct = direct;
     }
 
-    public String intToString(int out) {
-        if (out == 1) return "E";
+    public static String intToString(int out) {
+        if (out == 1) return "W";
         else if (out == 2) return "N";
-        else if (out == 3) return "W";
+        else if (out == 3) return "E";
         else return "S";
     }
 
-    public int stringToInt(String out) {
-        if (out.equals("E")) return 1;
+    public static int stringToInt(String out) {
+        if (out.equals("W")) return 1;
         else if (out.equals("N")) return 2;
-        else if (out.equals("W")) return 3;
+        else if (out.equals("E")) return 3;
         else return 4;
     }
 
 
     public void move() {
         int out = ((direct % 4) + 4) % 4;
-        if (out == 1) x--;
-        else if (out == 2) y++;
-        else if (out == 3) x++;
-        else y--;
-    }
-
-    public void printDirect() {
-        System.out.print(intToString(((direct % 4) + 4) % 4));
+        if (out == 1 && x > 0) x--;
+        else if (out == 2 && y < area.getMaxY()) y++;
+        else if (out == 3 && y < area.getMaxX()) x++;
+        else if (y > 0) y--;
     }
 
     public void go(String s) {
@@ -48,15 +45,15 @@ public class Rover {
         return x;
     }
 
-    public void setX(int x) {
-        this.x = x;
-    }
-
     public int getY() {
         return y;
     }
 
-    public void setY(int y) {
-        this.y = y;
+    public String getDirect() {
+        return intToString(((direct % 4) + 4) % 4);
+    }
+
+    public void setArea(Area area) {
+        this.area = area;
     }
 }
