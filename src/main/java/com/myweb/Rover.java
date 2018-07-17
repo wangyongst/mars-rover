@@ -4,7 +4,7 @@ public class Rover {
     private Area area;
     private int x;
     private int y;
-    private int direct; // 1W 2N 3E 4S
+    private int direct; // 1W 2N 3E 0S
 
     public Rover(int x, int y, int direct) {
         this.x = x;
